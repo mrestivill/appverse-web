@@ -122,6 +122,13 @@ aside#sidebar {
 aside#sidebar p.repo-owner,
 aside#sidebar p.repo-owner a {
   font-weight: bold;
+  margin-top: 20px;
+}
+
+aside#sidebar p.alt-download,
+aside#sidebar p.alt-download a {
+  padding-top: 1px;
+  margin-bottom: 10px;
 }
 
 #downloads {
@@ -154,6 +161,41 @@ aside a.button {
   display: block;
   background: transparent url(../images/download-button.png) 0 0 no-repeat;
   margin-bottom: 20px;
+  font-size: 21px;
+}
+a.quickbutton {
+  padding-left: 38px;
+  padding-right: 38px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+}
+
+header a.quickbutton {
+  position: absolute;
+  right: 0;
+  top: 5em;
+}
+
+a.documentation_button {
+  width: 134px;
+  height: 58px;
+  line-height: 1.2;
+  font-size: 23px;
+  color: #fff;
+  padding-left: 68px;
+  padding-top: 22px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+}
+
+a.documentation_button small {
+  display: block;
+  font-size: 11px;
+}
+
+aside a.documentation_button{
+  width: 138px;
+  padding-left: 64px;
+  display: block;
+  background: transparent url(../images/download-button.png) 0 0 no-repeat;
   font-size: 21px;
 }
 
@@ -266,6 +308,21 @@ form {
   color: #9ddcff;
   padding-right: 0.3em;
   margin-left: -2em;
+}
+
+aside h3{
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: #474747; 
+}
+
+aside h3:before{
+  content: ">>>";
+  color: #9ddcff;
+  padding-right: 0.3em;
 }
 
 #main-content h4 {
@@ -402,6 +459,11 @@ footer a:hover {
     padding-right: 0;
     margin-left: 0;
   }
+  aside h3:before{
+    content: none;
+    padding-right: 0;
+    margin-left: 0;
+  }
 }
 
 /* All Mobile Sizes (devices and browser) */
@@ -466,6 +528,11 @@ footer a:hover {
   #main-content h4:before,
   #main-content h5:before,
   #main-content h6:before {
+    content: none;
+    padding-right: 0;
+    margin-left: 0;
+  }
+  aside h3:before{
     content: none;
     padding-right: 0;
     margin-left: 0;
