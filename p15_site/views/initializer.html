@@ -19,7 +19,7 @@
             <h2 class="separator">Project type</h2>
             <div id="preconfig-section" class="clearfix">
                 <div class="preconfig-container blank-background">
-                    <button id="preconfig-blank" class="preconfig-block blank-background clearfix">
+                    <button id="preconfig-blank" class="preconfig-block blank-background clearfix" ng-click="keyBuild()">
                         <h3>GWT</h3>
                     </button>
                 </div>
@@ -36,28 +36,23 @@
                     <!--					<div class="preconfig-links-container"><a target="_blank" href="http://getbootstrap.com/getting-started/" class="first">Docs</a><a target="_blank" href="http://getbootstrap.com/examples/jumbotron/">Demo</a></div>-->
                 </div>
             </div>
+
             <div id="hidden-section">
                 <h2 id="fine-tuning-separator" class="separator">Project detailed configuration</h2>
                 <div id="customize-section" class="clearfix">
-
                     <div class="customize-section">
-                        <h3>HTML/CSS Template</h3>
-                        <label><input type="radio" name="htmlcss" value="h5bp-content" disabled>No template</label>
-                        <label><input type="radio" name="htmlcss" value="izr-responsive" disabled>Mobile-first Responsive</label>
-                        <label><input type="radio" name="htmlcss" value="boot-hero" disabled>Twitter Bootstrap</label>
+                        <h3>Archetype version</h3>
+                        <label><input type="text" name="archetypeVersion" ng-model="bamboodata.archetypeVersion"></label>
+                        <!--<label><select id="cboArchetypeVersion" name="cboDepartamento"></select></label>-->
                     </div>
                     <div class="customize-section">
-                        <h3>HTML5 Polyfills</h3>
-                        <label><input type="radio" name="polyfill" value="modernizr" disabled>Modernizr</label>
-                        <label><input type="radio" name="polyfill" value="html5shiv" disabled>Just HTML5shiv</label>
-                        <label><input type="checkbox" value="respond" disabled>Respond - <a target="_blank" href="https://github.com/h5bp/html5-boilerplate/issues/816#issuecomment-2512805">Alternatives</a></label>
+                        <h3>group ID</h3>
+                        <label><input type="text" name="groupId" ng-model="bamboodata.newProjectGroupID"></label>
                     </div>
                     <div class="customize-section">
-                        <h3>jQuery</h3>
-                        <label><input type="checkbox" value="jquerymin" disabled>Minified</label>
-                        <label><input type="checkbox" value="jquerydev" disabled>Development</label>
+                        <h3>Code version</h3>
+                        <label><input type="text" name="codeVersion" ng-model="bamboodata.newProjectVersion"></label>
                     </div>
-
 
                 </div>
                 <div id="ready-section" class="clearfix">
@@ -65,6 +60,9 @@
                         <h3>Ready!</h3>
                     </button>
                 </div>
+            </div>
+            <div id="hidden-section-cooming-soon">
+                <h2>Cooming soon</h2>
             </div>
             <div id="hidden-section-2">
                 <h2 id="fine-tuning-separator-2" class="separator">Project attributes</h2>
@@ -82,7 +80,7 @@
                         <label><input type="text" name="mail" value="mymail@mymail.com"></label>
                     </div>
                 </div>	
-                <input type="hidden" id="buildKeyDataHidden" ng-model="bamboodata.buildKeyData">
+                <input type="hidden" id="buildKeyDataHidden">
                 <div id="download-section" class="clearfix">
                     <button id="download" class="preconfig-block ready-background clearfix" ng-click="runJob()">
                         <h3>download!</h3>
@@ -112,7 +110,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="front/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
-
+<!--<script src="/scripts/p15.js"></script>-->
 <script>
                         var _gaq = [['_setAccount', 'UA-11028046-9'], ['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
                         (function(d, t) {

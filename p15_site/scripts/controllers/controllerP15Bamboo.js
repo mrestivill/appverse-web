@@ -18,7 +18,7 @@ angular.module('TMDashboard-Main')
         status: '',
         newProjectName: 'defaultTitle', //title project
         archetypeVersion: '1.2.5-RELEASE', 
-        newProjectGroupID: 'com.gft',
+        newProjectGroupID: 'org.appverse',
         newProjectArtifactID: 'defaultName', //nameProject
         newProjectVersion: '0.1-SNAPSHOT',
         newProjectOwnerEmail: '', // mail form
@@ -60,6 +60,8 @@ angular.module('TMDashboard-Main')
      * Access-Control-Request-Headers requires authorization.
      * Response sent to jobData as usual.
      */
+    
+    
     scope.runJob = function () {
        
        /*
@@ -85,8 +87,8 @@ angular.module('TMDashboard-Main')
             
                     
         };
-        console.log($('#buildKeyDataHidden').val());
-        console.log(scope.bamboodata.buildKeyData);
+        console.log('Hidden' + $('#buildKeyDataHidden').val());
+        console.log('Scope' + scope.bamboodata.buildKeyData);
         scope.bamboodata.buildKeyData = $('#buildKeyDataHidden').val();
 
         return  http({
@@ -104,8 +106,8 @@ angular.module('TMDashboard-Main')
                     scope.bamboodata.status = status;
                 });
     }
-    
-    $(function() {
+
+$(function() {
 
     /************
      CONFIG
@@ -117,7 +119,7 @@ angular.module('TMDashboard-Main')
                 'h5bp-content',
                 'modernizr',
                 'jquerymin'
-                
+
             ],
             jsf: [
                 'css-mode',
@@ -125,14 +127,14 @@ angular.module('TMDashboard-Main')
                 'modernizr',
                 'respond',
                 'jquerymin'
-                
+
             ],
             html5: [
                 'boot-hero',
                 'modernizr',
                 'respond',
                 'jquerymin'
-                
+
             ]
         },
         defaultStyles: {
@@ -156,7 +158,7 @@ angular.module('TMDashboard-Main')
                 'initializr-no-background',
                 'bootstrap-no-background'
             ],
-            jsf:[
+            jsf: [
                 'blank-no-background',
                 'initializr-background',
                 'bootstrap-no-background'
@@ -190,14 +192,19 @@ angular.module('TMDashboard-Main')
 
 
     $('#preconfig-blank').click(function() {
+        $('#customize-section').removeClass('jsfBack');
+        $('#customize-section').addClass('gwtBack');
         fillDefaultModules('gwt');
         _gaq.push(['_trackEvent', 'preconfig', 'h5bp-classic']);
         manageStyles('gwt');
         $('#buildKeyDataHidden').val('P15-GWTGEN');
+
     });
-    
-    
+
+
     $('#preconfig-initializr').click(function() {
+        $('#customize-section').removeClass('gwtBack');
+        $('#customize-section').addClass('jsfBack');
         fillDefaultModules('jsf');
         _gaq.push(['_trackEvent', 'preconfig', 'responsive']);
         manageStyles('jsf');
@@ -205,12 +212,13 @@ angular.module('TMDashboard-Main')
     });
 
     $('#preconfig-bootstrap').click(function() {
-        fillDefaultModules('html5');
-        _gaq.push(['_trackEvent', 'preconfig', 'bootstrap']);
+        $('#hidden-section-cooming-soon').fadeIn('slow');
+        $('#hidden-section').fadeOut('slow');
+        $('#hidden-section-2').fadeOut('slow');
         manageStyles('html5');
     });
-    
-    $('#download').click(function(){
+
+    $('#download').click(function() {
         $('#download>h3').html('Congratulations! In a few seconds you will receive an email with the link ;)');
         $('#download').addClass('greenBack');
         $('#download').attr("disabled", "disabled");
@@ -231,36 +239,36 @@ angular.module('TMDashboard-Main')
     /*********
      LOGIC
      *********/
-    
-    function manageStyles(type){
+
+    function manageStyles(type) {
         //console.log(type);
-        for (var i = 0; i<3; i++ ) {
-           var curStyle = config.defaultStyles[type][i];
-           var buttonName = config.defaultStyles['button'][i];
-           removeButtonClass(buttonName, config.defaultStyles['default'][i]);
-           removeButtonClass(buttonName,config.defaultStyles['noDefault'][i]);
-           addButtonClass(buttonName, curStyle);
-           //console.log(buttonName + " --> "+ curStyle);
+        for (var i = 0; i < 3; i++) {
+            var curStyle = config.defaultStyles[type][i];
+            var buttonName = config.defaultStyles['button'][i];
+            removeButtonClass(buttonName, config.defaultStyles['default'][i]);
+            removeButtonClass(buttonName, config.defaultStyles['noDefault'][i]);
+            addButtonClass(buttonName, curStyle);
+            //console.log(buttonName + " --> "+ curStyle);
         }
         ;
     }
-    
-    function removeButtonClass(sel, styleName){
+
+    function removeButtonClass(sel, styleName) {
         $(sel).removeClass(styleName);
         $(sel).parent().removeClass(styleName);
     }
-    
-    function addButtonClass(sel, styleName){
+
+    function addButtonClass(sel, styleName) {
         $(sel).addClass(styleName);
         $(sel).parent().addClass(styleName);
     }
 
     function fillDefaultModules(type) {
-        
+
         $('#download>h3').html('download!');
         $('#download').removeClass('greenBack');
         $('#download').removeAttr("disabled");
-        
+
         $('input').attr('checked', false);
 
         for (var i = 0, curModule; curModule = config.defaultModules[type][i++]; ) {
@@ -268,6 +276,7 @@ angular.module('TMDashboard-Main')
         }
         ;
         update();
+        $('#hidden-section-cooming-soon').fadeOut('slow');
         $('#hidden-section').fadeIn('slow');
         $('#hidden-section-2').fadeOut('slow');
     }
@@ -401,6 +410,7 @@ angular.module('TMDashboard-Main')
 
 
 }]);
+
 
 
 

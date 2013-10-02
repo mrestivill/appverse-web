@@ -174,7 +174,7 @@ body{ font:16px/26px 'Helvetica Neue', Helvetica, Arial, serif;color:#333; }
     /*margin:50px 0;*/
     color: #474747;
 
-    
+
 }
 
 .separator:before,
@@ -208,7 +208,7 @@ body{ font:16px/26px 'Helvetica Neue', Helvetica, Arial, serif;color:#333; }
 }
 
 .blanck-no-background button{
-     border-radius:3px;
+    border-radius:3px;
 }
 
 
@@ -243,14 +243,14 @@ body{ font:16px/26px 'Helvetica Neue', Helvetica, Arial, serif;color:#333; }
 
 
 .initializr-no-background button{
-     border-radius:3px;
+    border-radius:3px;
 }
 
 
 .initializr-background button,
 .initializr-background a,
 #download-section a{
-    background:#B40404;
+    background:#DF0101;
     border-radius:3px;
 }
 
@@ -264,15 +264,15 @@ body{ font:16px/26px 'Helvetica Neue', Helvetica, Arial, serif;color:#333; }
 .initializr-background button:hover,
 .initializr-background a:hover,
 #download-section a:hover{
-    background:#DF0101;
+    background:#B40404;
 }
 
 .initializr-background button:active{
-    background:#d14509;
+    background:#DF0101;
 }
 
 .bootstrap-no-background button{
-     border-radius:3px;
+    border-radius:3px;
 }
 
 .bootstrap-background button,
@@ -346,9 +346,22 @@ body{ font:16px/26px 'Helvetica Neue', Helvetica, Arial, serif;color:#333; }
 
 #main{
     padding:30px 0;
+    min-height: 300px;
 }
 
-#customize-section label{
+#customize-section.gwtBack{
+    background:#ADDBAD;
+    border-radius:3px;
+    min-height: 150px;
+}
+
+#customize-section.jsfBack{
+    background:#EC6767;
+    border-radius:3px;
+    min-height: 150px;
+}
+
+/*#customize-section label{
     background:white;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
@@ -361,36 +374,32 @@ body{ font:16px/26px 'Helvetica Neue', Helvetica, Arial, serif;color:#333; }
     padding:4px 8px;
     display:block;
     margin:0 5px 5px 0;
-    
+
     color:#ccc;
-}
+}*/
 
-#customize-section label:hover{
-    /*delete comment when the section is again available*/
-    /*background:#f5f5f5;*/
-}
-
-#customize-section input{
+/*#customize-section input{
     margin-right:6px;
-}
+}*/
 
 .customize-section h3{
-    text-align:center;
     font-weight:normal;
     font-family:'Helvetica Neue', Helvetica, Arial, serif;
     font-size:1.7em;
-    /*color: #474747;*/ /*delete color ccc when the section is again available*/
-    color:#ccc;
+    margin-left: 5px;
+    color:#fff;
 }
 
 .customize-section-2 h3{
     font-weight:normal;
     font-family:'Helvetica Neue', Helvetica, Arial, serif;
     font-size:1.7em;
+    margin-left: 5px;
     color: #474747;
 }
 
 
+#customize-section label,
 #customize-section-2 label{
     padding:4px 4px;
     display:block;
@@ -398,8 +407,9 @@ body{ font:16px/26px 'Helvetica Neue', Helvetica, Arial, serif;color:#333; }
 }
 
 
+#customize-section input, 
 #customize-section-2 input{
-     background:white;
+    background:white;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
     border-radius:4px;
@@ -407,23 +417,27 @@ body{ font:16px/26px 'Helvetica Neue', Helvetica, Arial, serif;color:#333; }
     border:1px solid #ccc;
     border-top:0;
     border-left:0;
-    
+
     width:95%;
     height:1.8em;
-    /*margin-right:6px;*/
+    letter-spacing: 2px;
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    
+   /*margin-right:6px;*/
 }
 
+#customize-section input:focus,
 #customize-section-2 input:focus{
-     background:white;
-     outline:none;
+    background:white;
+    outline:none;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
     border-radius:4px;
 
-    border:1px solid #474747;
+    border:1px solid #2e7bcf;
     border-top:0;
     border-left:0;
-    
+
     width:95%;
     height:1.8em;
     /*margin-right:6px;*/
@@ -472,6 +486,7 @@ textarea{
 #about-container{
     background:#eee;
     padding:30px 0;
+    min-height: 300px;
 }
 
 #about-container h3{
@@ -648,11 +663,35 @@ textarea{
         display:none;
     }
 
+    #hidden-section-cooming-soon{
+        display:none;
+        background:#C0D7F1;
+        border-radius:3px;
+        color:#F7FAFD;
+        text-align:center;
+    }
+    #hidden-section-cooming-soon h2{
+        padding-top: 150px;
+        padding-bottom: 150px;
+        font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+        /*text-align:center;*/
+        font-weight:bolder;
+        font-size:3em;
+        letter-spacing: -1px;
+    }
+    #hidden-section-cooming-soon h2:before {
+        content: "<< ";
+        color: #9AACC1;
+    }
+    #hidden-section-cooming-soon h2:after {
+        content: " >>";
+        color: #9AACC1;
+    }
     .customize-section{
         width:80%;
         margin: auto;
     }
-   .customize-section-2{
+    .customize-section-2{
         width:80%;
         margin: auto;
     }
@@ -660,7 +699,7 @@ textarea{
     .customize-section:nth-child(2n + 1){
         clear:both;
     }
-   .customize-section-2:nth-child(2n + 1){
+    .customize-section-2:nth-child(2n + 1){
         clear:both;
     }
 
@@ -669,11 +708,11 @@ textarea{
         width:48%;
     }
 
-   #download-section a:first-child{
+    #download-section a:first-child{
         margin-right:4%;
     }
-    
-   
+
+
 
     #about-container{
         -webkit-box-shadow:	inset 0 10px 15px rgba(0, 0, 0, 0.1);
