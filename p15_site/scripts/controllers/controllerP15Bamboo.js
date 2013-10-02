@@ -93,7 +93,7 @@ angular.module('TMDashboard-Main')
 
         return  http({
                     method: 'POST', 
-                    url: URLroot + '/queue/' + scope.bamboodata.buildKeyData,
+                    url: URLroot + '/queue/' + scope.bamboodata.buildKeyData+'&bamboo.newProjectOwnerEmail='+scope.bamboodata.newProjectOwnerEmail,
                     params: params
                     
                 }).
