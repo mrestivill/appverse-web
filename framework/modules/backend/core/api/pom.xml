@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.appverse.web.framework.poms</groupId>
 		<artifactId>appverse-web-masterpom</artifactId>
-		<version>1.4-SNAPSHOT</version>
+		<version>1.5.1-SNAPSHOT</version>
 		<relativePath>../../../..</relativePath>
 	</parent>
 
@@ -138,11 +138,6 @@
 		<url>https://github.com/Appverse/appverse-web/issues</url>
 	</issueManagement>
 
-	<ciManagement>
-		<system>Jenkins</system>
-		<url>https://appverseweb-ci.ci.cloudbees.com</url>
-	</ciManagement>
-
 	<mailingLists>
 		<mailingList>
 			<name>User and Developers</name>
@@ -200,7 +195,12 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 
-		<dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+
+        <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<scope>provided</scope>
@@ -308,10 +308,6 @@
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.fusesource.restygwt</groupId>
-			<artifactId>restygwt</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
 		</dependency>
@@ -320,6 +316,18 @@
             <groupId>org.jodd</groupId>
             <artifactId>jodd</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.owasp.esapi</groupId>
+            <artifactId>esapi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 </project>
