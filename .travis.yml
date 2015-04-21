@@ -1,5 +1,10 @@
 language: java
 jdk: oraclejdk7
+before_install:
+  - echo ""
+install:
+  - echo ""
 before_script:
   - cd framework
-script: mvn compile -q
+script: 
+  - mvn compile -q
