@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -190,7 +190,7 @@
 		<framework.version>1.5.1-SNAPSHOT</framework.version>
 		<spring.version>3.2.9.RELEASE</spring.version>
         <spring.security.version>3.2.5.RELEASE</spring.security.version>
-        <spring.oauth2.version>2.0.3.RELEASE</spring.oauth2.version>
+        <spring.oauth2.version>2.0.17.RELEASE</spring.oauth2.version>
 		<!--  GWT Native validation requires slf4j vresion 1.6.1, if this is changed, module frontend-gwt-api needs to be reviewed and tested -->
 		<slf4j.version>1.6.1</slf4j.version>
 		<gwt.version>2.6.1</gwt.version>
